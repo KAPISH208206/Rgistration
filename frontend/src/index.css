@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+a { text-decoration: none; color: inherit; }
+input, textarea, select, button { font-family: inherit; }
+button { cursor: pointer; }
+
+::placeholder { color: var(--text-faint); }
+
+/* ───────────────────────────────────────────────
+   THEME: LIGHT (default) — warm paper white, ink text
+   ─────────────────────────────────────────────── */
+:root, [data-theme="light"] {
+  --bg: #FAFAF8;
+  --surface: #FFFFFF;
+  --surface-raised: #FFFFFF;
+  --border: #E3E1DC;
+  --border-strong: #CCC9C2;
+
+  --text: #25282B;
+  --text-soft: #54585C;
+  --text-faint: #8B8F92;
+
+  --primary: #0E8F72;
+  --primary-hover: #0B7660;
+  --primary-soft: #E3F4EE;
+  --primary-text-on: #FFFFFF;
+
+  --accent: #C9762C;
+  --accent-soft: #FBEEE0;
+
+  --danger: #B3432F;
+  --danger-soft: #FBEAE6;
+  --success: #1E8E5A;
+  --success-soft: #E5F5EC;
+
+  --nav-bg: #1F2421;
+  --nav-text: #E7E5DF;
+  --nav-text-dim: #9FA39C;
+
+  --shadow: 0 1px 2px rgba(30,30,28,0.04), 0 2px 12px rgba(30,30,28,0.06);
+  --shadow-raised: 0 4px 20px rgba(30,30,28,0.10);
+}
+
+/* ───────────────────────────────────────────────
+   THEME: EVENING — dusky warm neutrals, low glare
+   ─────────────────────────────────────────────── */
+[data-theme="evening"] {
+  --bg: #2B2723;
+  --surface: #34302A;
+  --surface-raised: #3C3730;
+  --border: #4A443B;
+  --border-strong: #5C554A;
+
+  --text: #EEE8DE;
+  --text-soft: #C7BFB1;
+  --text-faint: #93897A;
+
+  --primary: #4FBF9A;
+  --primary-hover: #6BD0AE;
+  --primary-soft: #3A4640;
+  --primary-text-on: #1A1F1C;
+
+  --accent: #E0A35C;
+  --accent-soft: #463B2C;
+
+  --danger: #E0816C;
+  --danger-soft: #4A332D;
+  --success: #6FCB9A;
+  --success-soft: #324239;
+
+  --nav-bg: #211D19;
+  --nav-text: #EEE8DE;
+  --nav-text-dim: #93897A;
+
+  --shadow: 0 1px 2px rgba(0,0,0,0.2), 0 2px 14px rgba(0,0,0,0.28);
+  --shadow-raised: 0 6px 24px rgba(0,0,0,0.35);
+}
+
+/* ───────────────────────────────────────────────
+   THEME: DARK — cool charcoal, crisp contrast
+   ─────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg: #16181A;
+  --surface: #1E2123;
+  --surface-raised: #25282B;
+  --border: #34383B;
+  --border-strong: #454A4E;
+
+  --text: #EDEFEF;
+  --text-soft: #B4B8BB;
+  --text-faint: #797E81;
+
+  --primary: #2BC8A0;
+  --primary-hover: #4FD8B4;
+  --primary-soft: #1C3530;
+  --primary-text-on: #0C1614;
+
+  --accent: #E0A35C;
+  --accent-soft: #3A2E1E;
+
+  --danger: #E5806A;
+  --danger-soft: #3C2521;
+  --success: #4FD8A8;
+  --success-soft: #1C352C;
+
+  --nav-bg: #0F1112;
+  --nav-text: #EDEFEF;
+  --nav-text-dim: #797E81;
+
+  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 2px 16px rgba(0,0,0,0.4);
+  --shadow-raised: 0 6px 28px rgba(0,0,0,0.5);
+}
+
+/* Scrollbar theming (subtle) */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 6px; }
+
+/* Auth page split panel — hidden on narrow screens */
+.login-panel { display: flex; }
+@media (max-width: 860px) {
+  .login-panel { display: none; }
+}
